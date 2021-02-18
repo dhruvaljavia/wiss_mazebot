@@ -1,0 +1,14 @@
+<launch>   
+<!-- maze world -->
+   <include file="$(find maze_world_files)/launch/empty_maze.launch" /> 
+
+
+    <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name="x" default="0.2"/>
+    <arg name="y" default="0.2"/>
+    <arg name="z" default="1"/>
+        
+
+    <param name="robot_description" command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x) -y $(arg y) -z $(arg z) -param robot_description" />   
+</launch>
