@@ -14,3 +14,5 @@ SETUP >>>
    - lines 111 and 138 > maze_world_files/src/worlds/maze.sdf
    - lines 26 and 53 > maze_world_files/src/models/maze/model.sdf
 7. Finally, build the workspace!
+8. Also, you can try launching the maze by using maze.launch file and teleoperate the bot by launching the given file in a separate terminal:
+   - roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
